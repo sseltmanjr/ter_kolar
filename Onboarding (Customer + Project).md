@@ -1,18 +1,18 @@
 ```mermaid
 flowchart TB
 
-subgraph NS[Oracle NetSuite - CRM and Project Initiation]
+subgraph NS[Oracle NetSuite – CRM and Project Initiation]
     direction TB
     NS1[Lead]
     NS2[Prospect]
     NS3[Opportunity Created]
-    NS4[Project Created<br/>(documentation only, no integration trigger)]
+    NS4[Project Created\n(documentation only – no integration trigger)]
     NS5[Rocketlane IDs on NetSuite Customer and Project]
 
     NS1 --> NS2 --> NS3 --> NS4 --> NS5
 end
 
-subgraph RL[Rocketlane - PSA Onboarding]
+subgraph RL[Rocketlane – PSA Onboarding]
     direction TB
     RL1[Customer Exists in Rocketlane?]
     RL2[Create Customer in Rocketlane]
