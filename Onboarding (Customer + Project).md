@@ -1,9 +1,9 @@
 ```mermaid
-flowchart LR
+flowchart TB
 
-%% -----------------------------
-%% Oracle NetSuite (left)
-%% -----------------------------
+%% =============================
+%% Oracle NetSuite (top lane)
+%% =============================
 subgraph NS["Oracle NetSuite — CRM and Project Initiation"]
   direction TB
 
@@ -17,14 +17,14 @@ subgraph NS["Oracle NetSuite — CRM and Project Initiation"]
   NS_PAD --> NS1 --> NS2 --> NS3 --> NS4 --> NS5
 end
 
-%% -----------------------------
-%% Rocketlane (right)
-%% -----------------------------
+%% =============================
+%% Rocketlane (bottom lane)
+%% =============================
 subgraph RL["Rocketlane — PSA Onboarding"]
   direction TB
 
   RL_PAD[" "]:::pad
-  RL1{"Customer exists in\nRocketlane?"}
+  RL1{"Customer exists in Rocketlane?"}
   RL2["Create customer in Rocketlane"]
   RL3["Create or upsert project in Rocketlane"]
 
@@ -33,13 +33,13 @@ subgraph RL["Rocketlane — PSA Onboarding"]
   RL1 -->|Yes| RL3
 end
 
-%% -----------------------------
-%% Cross-system integration lines
-%% -----------------------------
+%% =============================
+%% Cross-system integration
+%% =============================
 NS4 -->|"Trigger: Project Created"| RL1
 RL3 -->|"Write back Rocketlane IDs"| NS5
 
-%% -----------------------------
+%% =============================
 %% Styling helpers
-%% -----------------------------
+%% =============================
 classDef pad fill:transparent,stroke:transparent;
